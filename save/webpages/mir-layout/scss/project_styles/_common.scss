@@ -1,14 +1,241 @@
-/*  common settings
- *  - for very basic settings
- *  - and for styles with no extra file available
- *  - at best, this file is nearly empty :)
+/* common settings
+ * - global settings, helper classes or styles with no own file
  */
 
 // Extra large devices (large desktops)
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
+/* *********************** feedback ************************ */
+
+#pp_feedback {
+  cursor: pointer;
+  position: fixed;
+  bottom: 40%;
+  right: -34px;
+  transform: rotate(-90deg);
+  display: block;
+  background: #75adad;
+  text-decoration: none;
+  border-bottom: solid 1px #75adad;
+  border-left: solid 0px #75adad;
+  border-right: solid 1px #75adad;
+  z-index: 999;
+  width: 100px;
+  text-align: center;
+}
+#pp_feedback:hover {
+  background: #aad2d2;
+  border-bottom: solid 1px #aad2d2;
+  border-left: solid 0px #aad2d2;
+  border-right: solid 1px #aad2d2;
+}
+#pp_feedback a {
+  color: #fff;
+  font-weight: 600;
+  display: block;
+  padding: 8px 4px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*  for beta testing only */
+#main_content .alert-danger a {
+  color: white;
+  font-weight: 600;
+}
+
+/* *********************** audio ************************ */
+#player_audio {
+  background: white url('../images/audio_poster.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* ********************* breadcrumb ********************* */
+.breadcrumb {
+  padding: 8px 0px;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+/* ********************** metadata ********************** */
+#headline h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+.mir-player {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+/* fix space between Abstract and  "weiterlesen" */
+.mir-abstract-overlay-tran {
+  bottom: 30px;
+}
+a.readmore {
+  margin-top: 10px;
+  display: block;
+}
+
+/* REP-352 */
+#headline .subtitle {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ********************** carousel ********************** */
+.carousel {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+.carousel-indicators {
+  bottom: auto;
+  top: 0;
+}
+.carousel-indicators {
+  li {
+    padding-top:0.5rem;
+    padding-bottom: 0.5rem;
+    transition: 0.5s ease;
+    &:hover {
+      &:after {
+        background-color: $success;
+        opacity: 0.6;
+      }
+    }
+    &:after {
+      content: "";
+      border: 1px solid $success;
+      display: block;
+      width: 2rem;
+      height: 0.5rem;
+    }
+    &.active {
+      &:after {
+        background-color: $success;
+      }
+    }
+  }
+}
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  width: 5rem;
+  color: $success;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: 0.5s ease;
+  align-items: flex-start;
+  i {
+    margin-top: .5rem;
+  }
+
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: white;
+  background-color: $success;
+  opacity: 0.5;
+}
+.carousel-inner {
+  padding-top: 5rem;
+}
+.carousel-inner h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 0.8;
+}
+.carousel-item__content-box {
+  padding-bottom: 2rem;
+  img {
+    width: 100%;
+  }
+}
+
+/* ********************** other ********************** */
+.hit_oa > span.badge-success {
+  background-color: #24780a;
+}
+.text-success, .result_body .result_filter .card.oa li[data-fq="worldReadableComplete:true"] .title,
+.text-success:hover,
+.result_body .result_filter .card.oa li[data-fq="worldReadableComplete:true"] .title:hover {
+  color: #24780a !important;
+}
+
+#main_content .result_head h1 {
+  font-size: 18px;
+  margin-top: 21px;
+  margin-bottom: 10.5px;
+}
+
+#badges a.access_condition,
+#badges .doc_state .mir-published {
+  background-color: #ef7f01;
+}
+
+.viewer .navbar.navbar-default {
+  border-color: #e9eeef;
+}
+
+.mycoreViewer .navbar {
+  border-top: 0px solid #75adad;
+  border-bottom: 0px solid #75adad;
+}
+
+.mycoreViewer .navbar button[data-id=MaximizeButton] {
+  margin-right: 25px;
+}
+
+#pp_coverCard .card-body {
+  text-align: center;
+}
+
+/* enables wrapping columns */
+.pp-sourcesBox > .col-xs-4,
+.pp-sourcesBox > .col-xs-8 {
+  margin-bottom: 30px;
+}
+.pp-sourcesBox > .col-md-2:nth-child(2n+1) {
+  clear: both;
+}
+@media (min-width: 992px) {
+.pp-sourcesBox > .col-md-2:nth-child(2n+1) {
+  clear: none;
+}
+  .pp-sourcesBox > .col-md-2:nth-child(4n+1) {
+    clear: both;
+  }
+}
+
+/* misc */
+.form-control:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(170, 210, 210, 0.25);
+}
+
+#series-layout > a {
+  display: block;
+  padding: 1.5rem 1rem 2rem 1rem;
+  & > img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.mycoreViewer .chapterTreeDesktop li[data-selected="true"],
+.mycoreViewer .textSearch li[data-selected="true"] {
+  background: #75adad;
+  border-color: #75adad;
+  color: white;
+}
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
@@ -28,4 +255,10 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
+  html body {
+    min-width: 320px;
+  }
+  .container {
+    padding-right: 45px;
+  }
 }
