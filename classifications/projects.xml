@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="projects">
+    <label xml:lang="x-uri" text="https://reposis-test.gbv.de/diemawes/classifications/mir_genres" />
+  <label xml:lang="de" text="Projekte" description="Liste der Projekte"/>
+  <label xml:lang="en" text="Projects" description="List of projects"/>
+  <categories>
+    <category ID="SovSurv">
+      <label xml:lang="de" text="Soviet Survivors"/>
+      <label xml:lang="en" text="Soviet Survivors"/>
+    </category>
+    <category ID="LangoD">
+      <label xml:lang="de" text="Languages of Diplomacy"/>
+      <label xml:lang="en" text="Languages of Diplomacy"/>
+    </category>
+  </categories>
