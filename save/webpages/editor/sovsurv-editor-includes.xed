@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
+
+  <xed:template id="admin.fields">
+    <xed:include ref="failed-validation-messages" />
+
+    <xed:bind xpath="../../../../service">
+      <xed:include ref="status" />
+    </xed:bind>
+                                                                  <!-- Anforderungen: SovSurv-3 -->
+    <xed:include ref="genre" />                                   <!-- Type -->
+    <xed:include ref="toc-layout" />
+    <xed:include ref="title.complex.repeated" />                  <!-- Title -->
+    <xed:include ref="person.repeated" />                         <!-- Author & Persons 4x -->
+    <xed:include ref="date.range.extended.datetimepicker" />      <!-- Date -->
+    <xed:include ref="place" />                                   <!-- Location -->
+    <xed:include ref="creator.place" />                           <!-- Location of interview -->
+    <xed:include ref="geographic.complex" />                      <!-- places mentioned -->
+    <xed:include ref="extent" />                                  <!-- Size -->
+    <xed:include ref="type.of.resource" />                        <!-- sourceDesc -->
+    <xed:include ref="language" />                                <!-- Language-->
+                                                                  <!-- Language of interview/document-->
+                                                                  <!-- Language of translation -->
+    <xed:include ref="rights" />                                  <!-- License -->
+    <xed:include ref="subject.complex" />                         <!-- keywords -->
+    <xed:include ref="abstract.repeated" />                       <!-- Abstract -->
+    <xed:include ref="comment.complex" />                         <!-- TODO: ? Comment -->
+    <xed:include ref="related.item.search.of.all.items" />        <!-- relation to other materials -->
+                                                                  <!-- TODO: ? Wir bilden derzeit nicht alle Relationen ab, Teilweise ist der Hintergrund noch unklar.
+                                                                      >> isPartOf
+                                                                      >> isReferencedBy
+                                                                      >> isReplacedBy
+                                                                      >> isRequiredBy
+                                                                      >> hasPart
+                                                                    -->
+                                                                    <!-- TODO: Place of birth of Interviewee -->
+
+
+    <xed:include ref="cancel.submit" />
+    <xed:include ref="cleanup-rules" />
+    <xed:include ref="validation-rules" />
+
+    <xed:include ref="javascript" />
+    
+    <!-- frame for modal window -->
+    <xed:include ref="modal.name" />
+    <xed:include ref="modal.body" />
+  </xed:template>
+
+  <xed:template id="person.repeated">
+    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']" />
+    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ivr']" />
+    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ive']" />
+    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='oth']" />
+    <mir:person.extended.repeated help-text="{i18n:mir.help.research.data.person}">
+      <option value="rcp">
+        <xed:output i18n="mir.role.addressee" />
+      </option>
+      <option value="aut">
+        <xed:output i18n="mir.role.author" />
+      </option>
+      <option value="cre">
+        <xed:output i18n="mir.role.creator" /> <!-- Sender ? -->
+      </option>
+      <option value="ive">
+        <xed:output i18n="mir.role.interviewee" />
+      </option>
+      <option value="ivr">
+        <xed:output i18n="mir.role.interviewer" />
+      </option>
+      <option value="oth">
+        <xed:output i18n="mir.role.other" /> <!-- Stenographer ? -->
+      </option>
+    </mir:person.extended.repeated>
+  </xed:template>
+
+</xed:template>
