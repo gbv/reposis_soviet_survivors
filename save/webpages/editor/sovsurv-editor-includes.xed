@@ -2,7 +2,7 @@
 
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
-  <xed:template id="admin.fields">
+  <xed:template id="sovsurv.admin.fields">
     <xed:include ref="failed-validation-messages" />
 
     <xed:bind xpath="../../../../service">
