@@ -74,8 +74,12 @@
     <label xml:lang="de">Dokumente einreichen</label>
     <label xml:lang="en">Submit Document</label>
     <item href="/editor/sovsurv-editor.xed" type="intern">
-      <label xml:lang="de">Admin-Editor</label>
-      <label xml:lang="en">Admin-Editor</label>
+      <label xml:lang="de">SovSurv-Editor</label>
+      <label xml:lang="en">SovSurv editor</label>
+    </item>
+    <item href="/editor/langod-editor.xed" type="intern">
+      <label xml:lang="de">LangoD-Editor</label>
+      <label xml:lang="en">LangoD editor</label>
     </item>
     <item href="/servlets/MCRActionMappingServlet/mods/create" type="intern">
       <label xml:lang="de">Publizieren</label>
