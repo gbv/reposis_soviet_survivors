@@ -35,6 +35,7 @@
                                                                       >> hasPart
                                                                     -->
                                                                     <!-- TODO: Place of birth of Interviewee -->
+    <xed:include ref="project.hidden" />                          <!-- Adds the project ID to the meta data hiddenly -->
 
 
     <xed:include ref="cancel.submit" />
@@ -48,6 +49,7 @@
     <xed:include ref="modal.body" />
   </xed:template>
 
+  <!-- fields -->
   <xed:template id="person.repeated">
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ivr']" />
@@ -73,6 +75,12 @@
         <xed:output i18n="mir.role.other" /> <!-- Stenographer ? -->
       </option>
     </mir:person.extended.repeated>
+  </xed:template>
+
+  <xed:template id="project.hidden">
+    <xed:bind xpath="mods:classification[@authority='projects']" initially="SovSurv">
+      <input id="projects" type="hidden" />
+    </xed:bind>
   </xed:template>
 
 </xed:template>
