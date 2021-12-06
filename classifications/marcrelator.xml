@@ -246,6 +246,12 @@
       <label xml:lang="de" text="Eigentümer(in)"
              description="Eine Person oder Institution, die derzeit im Besitz des Werkes oder der Sammlung ist." />
     </category>
+    <category ID="rcp">
+        <label xml:lang="en" text="Addressee"
+          description="A person, family, or organization to whom the correspondence in a work is addressed." />
+        <label xml:lang="de" text="Adressat"
+          description="Eine Person, Familie oder Organisation, an die die Korrespondenz in einem Werk gerichtet ist." />
+      </category>
     <category ID="cph">
       <label xml:lang="en" text="Copyright holder"
         description="A person or organization to whom copy and legal rights have been granted or transferred for the intellectual content of a work." />
