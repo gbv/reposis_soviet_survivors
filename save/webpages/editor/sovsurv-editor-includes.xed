@@ -23,9 +23,10 @@
                                                                   <!-- Language of interview/document-->
                                                                   <!-- Language of translation -->
     <xed:include ref="rights" />                                  <!-- License -->
+    <xed:include ref="shelfmark" />                               <!--  archival number -->
     <xed:include ref="subject.complex" />                         <!-- keywords -->
     <xed:include ref="abstract.repeated" />                       <!-- Abstract -->
-    <xed:include ref="comment.complex" />                         <!-- TODO: ? Comment -->
+    <xed:include ref="comment.complex" />                         <!-- Comment -->
     <xed:include ref="related.item.search.of.all.items" />        <!-- relation to other materials -->
                                                                   <!-- TODO: ? Wir bilden derzeit nicht alle Relationen ab, Teilweise ist der Hintergrund noch unklar.
                                                                       >> isPartOf
