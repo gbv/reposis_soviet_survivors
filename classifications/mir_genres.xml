@@ -23,14 +23,12 @@
       <label xml:lang="de" text="Report" />
       <label xml:lang="ru" text="Отчет" />
     </category>
-    <!-- noch unklar
-    <category ID="evaluation">
+    <category ID="official">
       <label xml:lang="x-hosts" text="standalone" />
-      <label xml:lang="en" text="Evaluation" />
-      <label xml:lang="de" text="Evaluation" />
-      <label xml:lang="ru" text="Оценка" />
+      <label xml:lang="en" text="Official Document" />
+      <label xml:lang="de" text="Offizielles Dokument" />
+      <label xml:lang="ru" text="Характеристика" />
     </category>
-    -->
     <category ID="poem_or_song">
       <label xml:lang="x-hosts" text="standalone" />
       <label xml:lang="en" text="Poem or song" />
