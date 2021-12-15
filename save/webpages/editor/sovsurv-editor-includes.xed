@@ -23,7 +23,7 @@
                                                                   <!-- Language of interview/document-->
                                                                   <!-- Language of translation -->
     <xed:include ref="rights" />                                  <!-- License -->
-    <xed:include ref="shelfmark" />                               <!--  archival number -->
+    <xed:include ref="shelfmark.repeated" />                      <!--  archival number -->
     <xed:include ref="subject.complex" />                         <!-- keywords -->
     <xed:include ref="abstract.repeated" />                       <!-- Abstract -->
     <xed:include ref="comment.complex" />                         <!-- Comment -->
@@ -79,6 +79,10 @@
     <xed:bind xpath="mods:classification[@authority='projects']" initially="SovSurv">
       <input id="projects" type="hidden" />
     </xed:bind>
+  </xed:template>
+
+  <xed:template id="shelfmark.repeated">
+    <mir:textfield xpath="mods:location/mods:shelfLocator" label="mir.shelfmark" repeat="true" min="1" max="10" help-text="{i18n:mir.help.shelfmark}" />
   </xed:template>
 
 </xed:template>
