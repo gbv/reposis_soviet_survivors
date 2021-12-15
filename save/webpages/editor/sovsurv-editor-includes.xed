@@ -55,7 +55,7 @@
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ivr']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ive']" />
-    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='oth']" />
+    <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='scr']" />
     <mir:person.extended.repeated help-text="{i18n:mir.help.research.data.person}">
       <option value="rcp">
         <xed:output i18n="mir.role.addressee" />
@@ -63,17 +63,14 @@
       <option value="aut">
         <xed:output i18n="mir.role.author" />
       </option>
-      <option value="cre">
-        <xed:output i18n="mir.role.creator" /> <!-- Sender ? -->
-      </option>
       <option value="ive">
         <xed:output i18n="mir.role.interviewee" />
       </option>
       <option value="ivr">
         <xed:output i18n="mir.role.interviewer" />
       </option>
-      <option value="oth">
-        <xed:output i18n="mir.role.other" /> <!-- Stenographer ? -->
+      <option value="scr">
+        <xed:output i18n="mir.role.stenographer" />
       </option>
     </mir:person.extended.repeated>
   </xed:template>

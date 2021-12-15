@@ -252,6 +252,12 @@
         <label xml:lang="de" text="Adressat"
           description="Eine Person, Familie oder Organisation, an die die Korrespondenz in einem Werk gerichtet ist." />
       </category>
+      <category ID="scr">
+        <label xml:lang="en" text="Stenographer"
+               description="A person who is an amanuensis and for a writer of manuscripts proper. For a person who makes pen-facsimiles, use Facsimilist [fac]." />
+        <label xml:lang="de" text="Stenograph"
+               description="Eine Person, die ein Amanuensis und für einen Schriftsteller von Manuskripten ist.Verwenden Sie für eine Person, die Pen-Facsimiles macht, Facesimilist [FAC]." />
+      </category>
     <category ID="cph">
       <label xml:lang="en" text="Copyright holder"
         description="A person or organization to whom copy and legal rights have been granted or transferred for the intellectual content of a work." />
