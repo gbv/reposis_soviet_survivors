@@ -17,6 +17,8 @@
     <xed:include ref="place" />                                   <!-- Location -->
     <xed:include ref="creator.place" />                           <!-- Location of interview -->
     <xed:include ref="geographic.complex" />                      <!-- places mentioned -->
+    <xed:include ref="cartographics.repeat" />                    <!-- Geo Coordinates-->
+
     <xed:include ref="extent" />                                  <!-- Size -->
     <xed:include ref="type.of.resource" />                        <!-- sourceDesc -->
     <xed:include ref="language" />                                <!-- Language-->
