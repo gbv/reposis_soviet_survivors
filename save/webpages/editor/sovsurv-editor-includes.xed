@@ -52,6 +52,52 @@
     <xed:include ref="modal.body" />
   </xed:template>
 
+  <!-- genres -->
+  
+  <xed:template id="genres.interview">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+
+  <xed:template id="genres.memoir">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.report">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.official">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.poem_or_song">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.inscription">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.school_essay">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.diary">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.letter">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.propaganda_material">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+  
+  <xed:template id="genres.official_document">
+    <xed:include ref="sovsurv.admin.fields" />
+  </xed:template>
+
   <!-- fields -->
   <xed:template id="person.repeated">
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']" />
