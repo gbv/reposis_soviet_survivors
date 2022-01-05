@@ -127,6 +127,47 @@
     </mir:person.extended.repeated>
   </xed:template>
 
+
+  <xed:template id="cartographics.repeat">
+    <xed:repeat xpath="mods:subject/mods:cartographics/mods:coordinates">
+      <div class="mir-fieldset-content">
+        <div class="row">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="sovsurv.cartographics.coordinates" />
+          </label>
+          <div class="col-md-6">
+            <div class="input-group">
+              <input id="{@id}" type="text" class="form-control" />
+              <div class="input-group-append">
+                <button type="button" class="show-openstreetmap-editor btn btn-secondary" data-lat="{$MIR.editor.start.coordinates.lat}" data-lon="{$MIR.editor.start.coordinates.lon}">
+                  OpenStreetMap
+                  <i class="fa fa-chevron-down" style="padding-left: 7px;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <mir:help-pmud help-text="{i18n:sovsurv.cartographics.coordinates.help}" pmud="true" />
+        </div>
+        <xed:include ref="cartographics-OpenStreetMap-container" />
+      </div>
+    </xed:repeat>
+    <xed:include ref="cartographics-assets" />
+  </xed:template>
+
+  
+  <xed:template id="geographic.complex">
+    <mir:geographic.repeated path="mods:subject[not(mods:topic)]/mods:geographic" min="1" max="20" label="mir.geographic" help-text="{i18n:mir.help.cartographics.place}" extended="true" />
+  </xed:template>
+
+  <xed:template id="geographic.input">
+    <div class="geographic-search">
+      <input type="text" size="26" class="form-control form-control-inline" data-search="searchEntity" data-search-type="VIAF"
+             data-search-entity-type="geographic" data-search-output=".viaf" data-search-output-type=".geographic_viafType" data-search-button="{i18n:button.search}"
+             data-search-button-loading="{i18n:button.loading}" data-search-result-empty="{i18n:mir.searchIdentifier.noResult}" data-next=".geographicExtended-container"/>
+    </div>
+  </xed:template>
+  
+
   <xed:template id="project.hidden">
     <xed:bind xpath="mods:classification[@authority='projects']" initially="SovSurv">
       <input id="projects" type="hidden" />
