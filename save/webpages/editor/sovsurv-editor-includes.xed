@@ -25,7 +25,8 @@
                                                                   <!-- Language of interview/document-->
                                                                   <!-- Language of translation -->
     <xed:include ref="rights" />                                  <!-- License -->
-    <xed:include ref="shelfmark.repeated" />                      <!--  archival number -->
+    <xed:include ref="archive" />                                 <!-- Archive -->
+    <xed:include ref="shelfmark.repeated" />                      <!-- Archival number -->
     <xed:include ref="subject.complex" />                         <!-- keywords -->
     <xed:include ref="abstract.repeated" />                       <!-- Abstract -->
     <xed:include ref="comment.complex" />                         <!-- Comment -->
@@ -127,6 +128,24 @@
     </mir:person.extended.repeated>
   </xed:template>
 
+  <xed:template id="archive">
+    <xed:bind xpath="mods:classification[@authorityURI='https://reposis-test.gbv.de/diemawes/classifications/sursurv_archives'][@displayLabel='sursurv_archives']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="sovsurv.archive" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:sursurv_archives" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:sovsurv.archive.help}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
 
   <xed:template id="cartographics.repeat">
     <xed:repeat xpath="mods:subject/mods:cartographics/mods:coordinates">

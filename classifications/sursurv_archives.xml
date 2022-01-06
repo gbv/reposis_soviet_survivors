@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+             ID="sursurv_archives">
+  <label xml:lang="x-uri" text="https://reposis-test.gbv.de/diemawes/classifications/sursurv_archives" />
+  <label xml:lang="de" text="Archive" description="Liste der Archive"/>
+  <label xml:lang="en" text="Archives" description="List of archives"/>
+  <categories>
+    <category ID="NA_IRI_RAN">
+      <label xml:lang="de" text="Nauchnyi arkhiv Instituta Rossiiskoi istorii Rossiiskoi Akademii Nauk (NA IRI RAN), Moskau"/>
+      <label xml:lang="en" text="Nauchnyi arkhiv Instituta Rossiiskoi istorii Rossiiskoi Akademii Nauk (NA IRI RAN), Moscow"/>
+    </category>
+    <category ID="TsDAGO">
+      <label xml:lang="de" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kiew"/>
+      <label xml:lang="en" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kiev"/>
+    </category>
+    <category ID="NARB">
+        <label xml:lang="de" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
+        <label xml:lang="en" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
+      </category>
+  </categories>
+</mycoreclass>
