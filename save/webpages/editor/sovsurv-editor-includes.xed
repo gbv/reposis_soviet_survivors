@@ -8,7 +8,8 @@
     <xed:bind xpath="../../../../service">
       <xed:include ref="status" />
     </xed:bind>
-                                                                  <!-- Anforderungen: SovSurv-3 -->
+
+    <!-- Anforderungen: SovSurv-3 -->
     <xed:include ref="genre" />                                   <!-- Type -->
     <xed:include ref="toc-layout" />
     <xed:include ref="title.complex.repeated" />                  <!-- Title -->
@@ -18,12 +19,11 @@
     <xed:include ref="creator.place" />                           <!-- Location of interview -->
     <xed:include ref="geographic.complex" />                      <!-- places mentioned -->
     <xed:include ref="cartographics.repeat" />                    <!-- Geo Coordinates-->
-
     <xed:include ref="extent" />                                  <!-- Size -->
     <xed:include ref="type.of.resource" />                        <!-- sourceDesc -->
     <xed:include ref="language" />                                <!-- Language-->
-                                                                  <!-- Language of interview/document-->
-                                                                  <!-- Language of translation -->
+    <!-- Language of interview/document-->
+    <!-- Language of translation -->
     <xed:include ref="rights" />                                  <!-- License -->
     <xed:include ref="archive" />                                 <!-- Archive -->
     <xed:include ref="shelfmark.repeated" />                      <!-- Archival number -->
@@ -31,21 +31,17 @@
     <xed:include ref="abstract.repeated" />                       <!-- Abstract -->
     <xed:include ref="comment.complex" />                         <!-- Comment -->
     <xed:include ref="related.item.search.of.all.items" />        <!-- relation to other materials -->
-                                                                  <!-- TODO: ? Wir bilden derzeit nicht alle Relationen ab, Teilweise ist der Hintergrund noch unklar.
-                                                                      >> isPartOf
-                                                                      >> isReferencedBy
-                                                                      >> isReplacedBy
-                                                                      >> isRequiredBy
-                                                                      >> hasPart
-                                                                    -->
-                                                                    <!-- TODO: Place of birth of Interviewee -->
+    <!-- TODO: ? Wir bilden derzeit nicht alle Relationen ab, Teilweise ist der Hintergrund noch unklar.
+         >> isPartOf
+         >> isReferencedBy
+         >> isReplacedBy
+         >> isRequiredBy
+         >> hasPart
+    -->
     <xed:include ref="project.hidden" />                          <!-- Adds the project ID to the meta data hiddenly -->
-
-
     <xed:include ref="cancel.submit" />
     <xed:include ref="cleanup-rules" />
     <xed:include ref="validation-rules" />
-
     <xed:include ref="javascript" />
     
     <!-- frame for modal window -->
@@ -106,7 +102,7 @@
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ivr']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ive']" />
     <xed:bind xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='scr']" />
-    <mir:person.extended.repeated help-text="{i18n:mir.help.research.data.person}">
+    <xed:include ref="person.extended.repeated">
       <option value="rcp">
         <xed:output i18n="mir.role.addressee" />
       </option>
@@ -125,7 +121,85 @@
       <option value="scr">
         <xed:output i18n="mir.role.stenographer" />
       </option>
-    </mir:person.extended.repeated>
+    </xed:include>
+  </xed:template>
+  
+  <xed:template id="person.profession">
+    <mir:textfield xpath="mods:affiliation" help-text="{i18n:sovsurv.person.profession.help}" label="sovsurv.person.profession" repeat="true" />
+  </xed:template>
+
+  <xed:template id="namePart.family">
+    <mir:textfield xpath="mods:namePart[@type='family']" help-text="{i18n:sovsurv.namePart.family.help}" label="sovsurv.namePart.family" repeat="true" />
+  </xed:template>
+
+  <xed:template id="namePart.given">
+    <mir:textfield xpath="mods:namePart[@type='given']" help-text="{i18n:sovsurv.namePart.given.help}" label="sovsurv.namePart.given" repeat="true" />
+  </xed:template>
+
+  <xed:template id="namePart.year_and_place_of_birth">
+    <mir:textfield xpath="mods:namePart[@type='date']" help-text="{i18n:sovsurv.namePart.year_place.help}" label="sovsurv.namePart.year_place" repeat="true" placeholder="{i18n:sovsurv.namePart.year_place.placeholder}" />
+  </xed:template>
+
+  <xed:template id="namePart.nationality">
+    <mir:textfield xpath="mods:namePart[@type='termsOfAddress']" help-text="{i18n:sovsurv.namePart.nationality.help}" label="sovsurv.namePart.nationality" repeat="true" />
+  </xed:template>
+
+  <xed:template id="namePart.sex">
+    <mir:textfield xpath="mods:namePart[@type='other']" help-text="{i18n:sovsurv.namePart.sex.help}" label="sovsurv.namePart.sex" repeat="true" />
+  </xed:template>
+
+  <xed:template id="person.extended.repeated">
+    <xed:repeat xpath="mods:name[@type='personal'  or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))]" min="1" max="100" method="build">
+      <xed:bind xpath="@type" initially="personal"/>
+      <fieldset class="personExtended_box">
+        <legend class="mir-fieldset-legend hiddenDetail">
+          <xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
+            <div class="form-group row required {$xed-validation-marker}">
+              <xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
+                <div class="col-md-3" style="text-align:right; font-weight:bold;">
+                  <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']">
+                    <select class="form-control form-control-inline">
+                      <option value="rcp">
+                        <xed:output i18n="sovsurv.person.extended.addressee" />
+                      </option>
+                      <option value="aut">
+                        <xed:output i18n="sovsurv.person.extended.author" />
+                      </option>
+                      <option value="isb">
+                        <xed:output i18n="sovsurv.person.extended.issuing" />
+                      </option>
+                      <option value="ive">
+                        <xed:output i18n="sovsurv.person.extended.interviewee" />
+                      </option>
+                      <option value="ivr">
+                        <xed:output i18n="sovsurv.person.extended.interviewer" />
+                      </option>
+                      <option value="scr">
+                        <xed:output i18n="sovsurv.person.extended.stenographer" />
+                      </option>
+                    </select>
+                  </xed:bind>
+                </div>
+                <div class="col-md-6 center-vertical">
+                  <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="person.fields.noHidden" />
+                  <span class="fas fa-chevron-down expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
+                </div>
+                  <mir:help-pmud help-text="{i18n:sovsurv.archive.help}" pmud="true" />
+              </xed:bind>
+            </div>
+         </xed:bind>
+        </legend>
+        <div class="mir-fieldset-content personExtended-container d-none">
+          <xed:include ref="namePart.given" />
+          <xed:include ref="namePart.family" />
+          <xed:include ref="namePart.year_and_place_of_birth" />
+          <xed:include ref="namePart.nationality" />
+          <xed:include ref="person.profession" />
+          <xed:include ref="namePart.sex" />
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameIdentifier.repeated" />
+        </div>
+      </fieldset>
+    </xed:repeat>
   </xed:template>
 
   <xed:template id="archive">
@@ -172,7 +246,6 @@
     </xed:repeat>
     <xed:include ref="cartographics-assets" />
   </xed:template>
-
   
   <xed:template id="geographic.complex">
     <mir:geographic.repeated path="mods:subject[not(mods:topic)]/mods:geographic" min="1" max="20" label="mir.geographic" help-text="{i18n:mir.help.cartographics.place}" extended="true" />
@@ -186,7 +259,6 @@
     </div>
   </xed:template>
   
-
   <xed:template id="project.hidden">
     <xed:bind xpath="mods:classification[@authority='projects']" initially="SovSurv">
       <input id="projects" type="hidden" />
