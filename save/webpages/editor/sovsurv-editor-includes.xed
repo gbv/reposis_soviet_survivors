@@ -190,6 +190,7 @@
          </xed:bind>
         </legend>
         <div class="mir-fieldset-content personExtended-container d-none">
+          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameType" />
           <xed:include ref="namePart.given" />
           <xed:include ref="namePart.family" />
           <xed:include ref="namePart.year_and_place_of_birth" />
