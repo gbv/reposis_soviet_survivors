@@ -65,11 +65,5 @@
       <label xml:lang="de" text="Propaganda Material" />
       <label xml:lang="ru" text="Материал пропаганды" />
     </category>
-    <category ID="official_document">
-      <label xml:lang="x-hosts" text="standalone" />
-      <label xml:lang="en" text="Official document" />
-      <label xml:lang="de" text="Offizielles Dokument" />
-      <label xml:lang="ru" text="Официальный документ" />
-    </category>
   </categories>
 </mycoreclass>
