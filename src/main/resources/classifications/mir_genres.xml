@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_genres">
   <label xml:lang="en" text="genre" description="List of document types" />
-  <label xml:lang="x-uri" text="https://reposis-test.gbv.de/diemawes/classifications/mir_genres" />
+  <label xml:lang="x-uri" text="http://qed.perspectivia.net/soviet-survivors-backend/classifications/mir_genres" />
   <label xml:lang="ru" text="Genre" description="Список типов документов" />
   <label xml:lang="de" text="Genre" description="Liste der Dokumenttypen" />
   <categories>

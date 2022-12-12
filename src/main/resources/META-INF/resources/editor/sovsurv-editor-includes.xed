@@ -204,7 +204,7 @@
   </xed:template>
 
   <xed:template id="archive">
-    <xed:bind xpath="mods:classification[@authorityURI='https://reposis-test.gbv.de/diemawes/classifications/sursurv_archives'][@displayLabel='sursurv_archives']/@valueURIxEditor">
+    <xed:bind xpath="mods:classification[@authorityURI='https://qed.perspectivia.net/soviet-survivors-backend/classifications/sursurv_archives'][@displayLabel='sursurv_archives']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="sovsurv.archive" />

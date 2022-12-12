@@ -16,7 +16,7 @@
 
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;">Die Zeitzeugenberichte werden hier im russischen Original und in deutscher und englischer Übersetzung gezeigt.</p>
 
-<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;"><a href="https://reposis-test.gbv.de/diemawes/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img src="https://survivorsger.hypotheses.org/files/2021/06/banner_main-1.jpg" /></a></p>
+<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;"><a href="/soviet-survivors-backend/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img src="https://survivorsger.hypotheses.org/files/2021/06/banner_main-1.jpg" /></a></p>
 
 <p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;"> </p>
 
@@ -28,7 +28,7 @@
 </div>
 </div>
 
-<form action="https://reposis-test.gbv.de/diemawes/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;fq=mods.genre%3Ainterview&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed" class="search_form" method="post">
+<form action="/soviet-survivors-backend/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;fq=mods.genre%3Ainterview&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed" class="search_form" method="post">
 <div class="input-group-btn input-group-prepend"> </div>
 </form>
 </div>
@@ -56,7 +56,7 @@
 <div class="wp-block-spacer" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; clear: both; height: 15px;"> </div>
 
 <figure class="wp-block-image size-full" style="margin: 0px 0px 1em; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; font: inherit; vertical-align: baseline;">
-<p><a href="https://reposis-test.gbv.de/diemawes/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img alt="" class="wp-image-362" height="454" loading="lazy" sizes="(max-width: 1403px) 100vw, 1403px" src="https://survivorsrus.hypotheses.org/files/2021/06/banner_main.jpg" srcset="https://survivorsrus.hypotheses.org/files/2021/06/banner_main.jpg 1403w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-300x97.jpg 300w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-500x162.jpg 500w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-768x249.jpg 768w" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; max-width: 100%; height: auto; transition: opacity 0.2s ease 0s;" width="1403" /></a></p>
+<p><a href="/soviet-survivors-backend/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img alt="" class="wp-image-362" height="454" loading="lazy" sizes="(max-width: 1403px) 100vw, 1403px" src="https://survivorsrus.hypotheses.org/files/2021/06/banner_main.jpg" srcset="https://survivorsrus.hypotheses.org/files/2021/06/banner_main.jpg 1403w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-300x97.jpg 300w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-500x162.jpg 500w, https://survivorsrus.hypotheses.org/files/2021/06/banner_main-768x249.jpg 768w" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; max-width: 100%; height: auto; transition: opacity 0.2s ease 0s;" width="1403" /></a></p>
 
 <p> </p>
 
@@ -87,7 +87,7 @@
 <div class="wp-block-spacer" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; clear: both; height: 15px;"> </div>
 
 <figure class="wp-block-image size-full" style="margin: 0px 0px 1em; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; font: inherit; vertical-align: baseline;">
-<p><a href="https://reposis-test.gbv.de/diemawes/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img alt="" class="wp-image-573" height="454" loading="lazy" sizes="(max-width: 1403px) 100vw, 1403px" src="https://survivors.hypotheses.org/files/2021/06/banner_main-1.jpg" srcset="https://survivors.hypotheses.org/files/2021/06/banner_main-1.jpg 1403w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-300x97.jpg 300w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-500x162.jpg 500w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-768x249.jpg 768w" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; max-width: 100%; height: auto; transition: opacity 0.2s ease 0s;" width="1403" /></a></p>
+<p><a href="/soviet-survivors-backend/servlets/solr/select?q=%2BobjectType%3A%22mods%22&amp;fl=*&amp;sort=mods.dateIssued+desc&amp;rows=20&amp;version=4.5&amp;mask=search%2Fsimple_intern.xed"><img alt="" class="wp-image-573" height="454" loading="lazy" sizes="(max-width: 1403px) 100vw, 1403px" src="https://survivors.hypotheses.org/files/2021/06/banner_main-1.jpg" srcset="https://survivors.hypotheses.org/files/2021/06/banner_main-1.jpg 1403w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-300x97.jpg 300w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-500x162.jpg 500w, https://survivors.hypotheses.org/files/2021/06/banner_main-1-768x249.jpg 768w" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; max-width: 100%; height: auto; transition: opacity 0.2s ease 0s;" width="1403" /></a></p>
 
 <p> </p>
 

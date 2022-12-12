@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
              xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
              ID="sursurv_archives">
-  <label xml:lang="x-uri" text="https://reposis-test.gbv.de/diemawes/classifications/sursurv_archives" />
+  <label xml:lang="x-uri" text="http://qed.perspectivia.net/soviet-survivors-backend/classifications/sursurv_archives" />
   <label xml:lang="de" text="Archive" description="Liste der Archive"/>
   <label xml:lang="en" text="Archives" description="List of archives"/>
   <categories>
