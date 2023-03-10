@@ -10,14 +10,20 @@
     <category ID="NA_IRI_RAN">
       <label xml:lang="de" text="Nauchnyi arkhiv Instituta Rossiiskoi istorii Rossiiskoi Akademii Nauk (NA IRI RAN), Moskau"/>
       <label xml:lang="en" text="Nauchnyi arkhiv Instituta Rossiiskoi istorii Rossiiskoi Akademii Nauk (NA IRI RAN), Moscow"/>
+      <label xml:lang="ru" text="Научный архив Института истории Российской академии наук (НА ИРИ РАН), Москва"/>
+      <label xml:lang="ukr" text="Науковий архів Інституту історії Російської академії наук (НА ИРИ РАН), Москва"/>
     </category>
     <category ID="TsDAGO">
-      <label xml:lang="de" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kiew"/>
-      <label xml:lang="en" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kiev"/>
+      <label xml:lang="de" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kyiv"/>
+      <label xml:lang="en" text="Tsentralnyi derzhavnyi arkhiv hromads'kykh ob’iednan’ Ukrainy (TsDAGO), Kyiv"/>
+      <label xml:lang="ru" text="Центральный государственный архив общественных организаций Украины (ЦДАГО), Киев"/>
+      <label xml:lang="ukr" text="Центральний державний архів громадських об’єднань України (ЦДАГО)"/>
     </category>
     <category ID="NARB">
-        <label xml:lang="de" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
-        <label xml:lang="en" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
+      <label xml:lang="de" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
+      <label xml:lang="en" text="Natsional’nyi arkhiv Respubliki Belarus’ (NARB), Minsk"/>
+      <label xml:lang="ru" text="Национальный архив Республики Беларусь (НАРБ), Минск"/>
+      <label xml:lang="ukr" text="Національний архів Республіки Білорусь (НАРБ), Мінськ"/>
       </category>
   </categories>
 </mycoreclass>
