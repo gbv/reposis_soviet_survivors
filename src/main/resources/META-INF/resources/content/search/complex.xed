@@ -22,7 +22,7 @@
           <div class="card-body">
             <div class="col-md-10">
               <xed:bind xpath="conditions/boolean/boolean">
-                <xed:repeat xpath="condition[contains(',mods.title,mods.author,mods.name,allMeta,', concat(',',@field,','))]" method="clone">
+                <xed:repeat xpath="condition[contains(',mods.title,mods.author,mods.subject,mods.name,allMeta,', concat(',',@field,','))]" method="clone">
                   <!-- Title -->
                   <div class="form-group row">
                     <div class="col-md-3">
@@ -33,6 +33,9 @@
                           </option>
                           <option value="mods.author">
                             <xed:output i18n="editor.search.mir.author" />
+                          </option>
+                          <option value="mods.subject">
+                            <xed:output i18n="editor.search.topic" />
                           </option>
                           <option value="mods.name">
                             <xed:output i18n="editor.search.mir.name" />
