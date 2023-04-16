@@ -42,7 +42,6 @@
                               <xed:output i18n="editor.search.topic" />
                             </option>
                             <option value="mods.name">
-                            <option value="mods.name">
                               <xed:output i18n="editor.search.mir.name" />
                             </option>
                             <option value="allMeta">
