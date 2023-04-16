@@ -2,19 +2,310 @@
 
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
-  <!-- ========== extend editor-genres.xed ========== -->
-  <!-- Admin Template wir fürs erste überschrieben, bis wir zwischen den Projekt-Admins in der MetaDaten-Ansicht unterscheiden können -->
-  <xed:template id="admin.fields">
-      <xed:include ref="sovsurv.admin.fields" />
-  </xed:template>
+	<!-- ========== extend editor-genres.xed ========== -->
+	<!-- Admin Template wir fürs erste überschrieben, bis wir zwischen den Projekt-Admins in der MetaDaten-Ansicht unterscheiden können -->
+	<xed:template id="admin.fields">
 
+		<!-- Anforderungen: SovSurv-3 -->
+		<xed:include ref="genre"/>                                   <!-- Type -->
+		<xed:include ref="toc-layout"/>
+		<xed:include ref="title.complex.repeated"/>                  <!-- Title -->
+		<xed:include ref="person.repeated"/>                         <!-- Author & Persons & Corporation 5x -->
+		<xed:include ref="date.range.extended.datetimepicker"/>      <!-- Date -->
+		<xed:include ref="place"/>                                   <!-- Location -->
+		<xed:include ref="creator.place"/>                           <!-- Location of interview -->
+		<xed:include ref="geographic.repeated"/>                      <!-- places mentioned -->
+		<xed:include ref="cartographics.repeat"/>                    <!-- Geo Coordinates-->
+		<xed:include ref="extent"/>                                  <!-- Size -->
+		<xed:include ref="type.of.resource"/>                        <!-- sourceDesc -->
+		<xed:include ref="language"/>                                <!-- Language-->
+		<!-- Language of interview/document-->
+		<!-- Language of translation -->
+		<xed:include ref="rights"/>                                  <!-- License -->
+		<xed:include ref="archive"/>                                 <!-- Archive -->
+		<xed:include ref="shelfmark.repeated"/>                      <!-- Archival number -->
+		<xed:include ref="subject.complex"/>                         <!-- keywords -->
+		<xed:include ref="abstract.repeated"/>                       <!-- Abstract -->
+		<xed:include ref="comment.complex"/>                         <!-- Comment -->
+		<xed:include ref="related.item.search.of.all.items"/>        <!-- relation to other materials -->
+		<!-- TODO: ? Wir bilden derzeit nicht alle Relationen ab, Teilweise ist der Hintergrund noch unklar.
+				 >> isPartOf
+				 >> isReferencedBy
+				 >> isReplacedBy
+				 >> isRequiredBy
+				 >> hasPart
+		-->
+		<xed:include ref="cancel.submit"/>
+		<xed:include ref="cleanup-rules"/>
+		<xed:include ref="validation-rules"/>
+		<xed:include ref="javascript"/>
 
+		<!-- frame for modal window -->
+		<xed:include ref="modal.name"/>
+		<xed:include ref="modal.body"/>
+	</xed:template>
 
-  <!-- ========== validation ========== -->
+	<!-- genres -->
 
+	<xed:template id="genres.interview">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
 
+	<xed:template id="genres.memoir">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
 
-  <!-- ========== project specific templates ========== -->
+	<xed:template id="genres.report">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
 
+	<xed:template id="genres.official">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.poem_or_song">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.inscription">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.school_essay">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.diary">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.letter">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.propaganda_material">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<xed:template id="genres.official_document">
+		<xed:include ref="admin.fields"/>
+	</xed:template>
+
+	<!-- fields -->
+	<xed:template id="person.repeated">
+		<xed:bind
+				xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']"/>
+		<xed:bind
+				xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='isb']"/>
+		<xed:bind
+				xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ivr']"/>
+		<xed:bind
+				xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='ive']"/>
+		<xed:bind
+				xpath="mods:name[@type='personal'][mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='scr']"/>
+		<xed:include ref="person.extended.repeated">
+			<option value="rcp">
+				<xed:output i18n="mir.role.addressee"/>
+			</option>
+			<option value="aut">
+				<xed:output i18n="mir.role.author"/>
+			</option>
+			<option value="isb">
+				<xed:output i18n="mir.role.issuing_body"/>
+			</option>
+			<option value="ive">
+				<xed:output i18n="mir.role.interviewee"/>
+			</option>
+			<option value="ivr">
+				<xed:output i18n="mir.role.interviewer"/>
+			</option>
+			<option value="scr">
+				<xed:output i18n="mir.role.stenographer"/>
+			</option>
+		</xed:include>
+	</xed:template>
+
+	<xed:template id="person.profession">
+		<mir:textfield xpath="mods:affiliation" help-text="{i18n:sovsurv.person.profession.help}"
+									 label="sovsurv.person.profession" repeat="true"/>
+	</xed:template>
+
+	<xed:template id="namePart.family">
+		<mir:textfield xpath="mods:namePart[@type='family']" help-text="{i18n:sovsurv.namePart.family.help}"
+									 label="sovsurv.namePart.family" repeat="true"/>
+	</xed:template>
+
+	<xed:template id="namePart.given">
+		<mir:textfield xpath="mods:namePart[@type='given']" help-text="{i18n:sovsurv.namePart.given.help}"
+									 label="sovsurv.namePart.given" repeat="true"/>
+	</xed:template>
+
+	<xed:template id="namePart.year_and_place_of_birth">
+		<mir:textfield xpath="mods:namePart[@type='date']" help-text="{i18n:sovsurv.namePart.year_place.help}"
+									 label="sovsurv.namePart.year_place" repeat="true"
+									 placeholder="{i18n:sovsurv.namePart.year_place.placeholder}"/>
+	</xed:template>
+
+	<xed:template id="namePart.nationality">
+		<mir:textfield xpath="mods:namePart[@type='termsOfAddress']" help-text="{i18n:sovsurv.namePart.nationality.help}"
+									 label="sovsurv.namePart.nationality" repeat="true"/>
+	</xed:template>
+
+	<xed:template id="namePart.sex">
+		<mir:textfield xpath="mods:namePart[@type='other']" help-text="{i18n:sovsurv.namePart.sex.help}"
+									 label="sovsurv.namePart.sex" repeat="true"/>
+	</xed:template>
+
+	<xed:template id="person.extended.repeated">
+		<xed:repeat
+				xpath="mods:name[@type='personal'  or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))]"
+				min="1" max="100" method="build">
+			<xed:bind xpath="@type" initially="personal"/>
+			<fieldset class="personExtended_box">
+				<legend class="mir-fieldset-legend hiddenDetail">
+					<xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
+						<div class="form-group row required {$xed-validation-marker}">
+							<xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
+								<div class="col-md-3" style="text-align:right; font-weight:bold;">
+									<xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']">
+										<select class="form-control form-control-inline">
+											<option value="rcp">
+												<xed:output i18n="sovsurv.person.extended.addressee"/>
+											</option>
+											<option value="aut">
+												<xed:output i18n="sovsurv.person.extended.author"/>
+											</option>
+											<option value="isb">
+												<xed:output i18n="sovsurv.person.extended.issuing"/>
+											</option>
+											<option value="ive">
+												<xed:output i18n="sovsurv.person.extended.interviewee"/>
+											</option>
+											<option value="ivr">
+												<xed:output i18n="sovsurv.person.extended.interviewer"/>
+											</option>
+											<option value="oth">
+												<xed:output i18n="sovsurv.person.extended.sender"/>
+											</option>
+											<option value="scr">
+												<xed:output i18n="sovsurv.person.extended.stenographer"/>
+											</option>
+										</select>
+									</xed:bind>
+								</div>
+								<div class="col-md-6 center-vertical">
+									<xed:include ref="person.fields.noHidden"/>
+									<span class="fas fa-chevron-down expand-item" title="{i18n:translate('mir.help.expand')}"
+												aria-hidden="true"></span>
+								</div>
+								<mir:help-pmud help-text="{i18n:sovsurv.archive.help}" pmud="true"/>
+							</xed:bind>
+						</div>
+					</xed:bind>
+				</legend>
+				<div class="mir-fieldset-content personExtended-container d-none">
+					<xed:include ref="nameType"/>
+					<xed:include ref="namePart.given"/>
+					<xed:include ref="namePart.family"/>
+					<xed:include ref="namePart.year_and_place_of_birth"/>
+					<xed:include ref="namePart.nationality"/>
+					<xed:include ref="person.profession"/>
+					<xed:include ref="namePart.sex"/>
+				</div>
+			</fieldset>
+		</xed:repeat>
+	</xed:template>
+
+	<xed:template id="archive">
+		<xed:bind
+				xpath="mods:classification[@authorityURI='https://qed.perspectivia.net/soviet-survivors-backend/classifications/sursurv_archives'][@displayLabel='sursurv_archives']/@valueURIxEditor">
+			<div class="form-group row {$xed-validation-marker}">
+				<label class="col-md-3 col-form-label text-right">
+					<xed:output i18n="sovsurv.archive"/>
+				</label>
+				<div class="col-md-6">
+					<select class="form-control form-control-inline">
+						<option value="">
+							<xed:output i18n="mir.select"/>
+						</option>
+						<xed:include uri="xslStyle:items2options:classification:editor:-1:children:sursurv_archives"/>
+					</select>
+				</div>
+				<mir:help-pmud help-text="{i18n:sovsurv.archive.help}" pmud="false"/>
+			</div>
+		</xed:bind>
+	</xed:template>
+
+	<xed:template id="cartographics.repeat">
+		<xed:repeat xpath="mods:subject/mods:cartographics/mods:coordinates">
+			<div class="mir-fieldset-content">
+				<div class="row">
+					<label class="col-md-3 col-form-label text-right">
+						<xed:output i18n="sovsurv.cartographics.coordinates"/>
+					</label>
+					<div class="col-md-6">
+						<div class="input-group">
+							<input id="{@id}" type="text" class="form-control"/>
+							<div class="input-group-append">
+								<button type="button" class="show-openstreetmap-editor btn btn-secondary"
+												data-lat="{$MIR.editor.start.coordinates.lat}" data-lon="{$MIR.editor.start.coordinates.lon}">
+									OpenStreetMap
+									<i class="fa fa-chevron-down" style="padding-left: 7px;"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<mir:help-pmud help-text="{i18n:sovsurv.cartographics.coordinates.help}" pmud="true"/>
+				</div>
+				<xed:include ref="cartographics-OpenStreetMap-container"/>
+			</div>
+		</xed:repeat>
+		<xed:include ref="cartographics-assets"/>
+	</xed:template>
+
+	<xed:template id="geographicIdentifier">
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label text-right">
+				<xed:output i18n="mir.geoname"/>
+			</label>
+			<div class="col-md-6">
+				<xed:bind xpath="@valueURIxEditor">
+					<input type="text" size="20" class="form-control form-control-inline"/>
+				</xed:bind>
+			</div>
+			<mir:help-pmud help-text="{i18n:mir.help.geonames}" pmud="false"/>
+		</div>
+	</xed:template>
+
+	<template id="geographic.repeated">
+		<xed:repeat xpath="mods:subject[not(mods:topic)]/mods:geographic" min="1" max="100">
+			<xed:bind xpath="@authorityURI" initially="https://www.geonames.org/">
+				<input type="hidden"/>
+			</xed:bind>
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label text-right">
+					<xed:output i18n="mir.geographic"/>
+				</label>
+				<div class="col-md-6 center-vertical">
+					<div class="search-geographic-extended">
+						<div class="geographic-search">
+							<input type="text" size="26" class="form-control form-control-inline"/>
+						</div>
+					</div>
+					<span class="fas fa-chevron-down expand-item" data-target=".geographicExtended-container"
+								title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
+				</div>
+				<mir:help-pmud help-text="{i18n:mir.help.cartographics.place}" pmud="true"/>
+			</div>
+			<span class="geographicExtended-container d-none">
+				<xed:include ref="geographicIdentifier"/>
+			</span>
+		</xed:repeat>
+	</template>
+
+	<xed:template id="shelfmark.repeated">
+		<mir:textfield xpath="mods:location/mods:shelfLocator" label="mir.shelfmark" repeat="true" min="1" max="10"
+									 help-text="{i18n:mir.help.shelfmark}"/>
+	</xed:template>
 
 </xed:template>
