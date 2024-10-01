@@ -24,7 +24,7 @@
     <parent>
         <groupId>de.gbv.reposis</groupId>
         <artifactId>reposis_mir_parent</artifactId>
-        <version>2021.06-SNAPSHOT</version>
+        <version>2022.06-SNAPSHOT</version>
     </parent>
 
     <groupId>de.gbv.soviet_survivors</groupId>
@@ -102,6 +102,11 @@
             <artifactId>mycore-pi</artifactId>
         </dependency>
         -->
+        <dependency>
+            <groupId>org.mycore.mir</groupId>
+            <artifactId>mir-layout</artifactId>
+            <version>2022.06.3-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.sun.activation</groupId>
             <artifactId>jakarta.activation</artifactId>
