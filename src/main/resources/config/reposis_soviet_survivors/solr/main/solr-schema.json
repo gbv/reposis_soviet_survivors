@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "add-field": {
+      "name":"survivors.mods.language",
+      "type":"string",
+      "multiValued":true
+    }
+  }
+]
