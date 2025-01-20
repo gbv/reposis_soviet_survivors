@@ -180,6 +180,9 @@
                       <option value="scr">
                         <xed:output i18n="sovsurv.person.extended.stenographer" />
                       </option>
+                      <option value="trl">
+                        <xed:output i18n="sovsurv.person.extended.translator" />
+                      </option>
                     </select>
                   </xed:bind>
                 </div>
