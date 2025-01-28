@@ -12,6 +12,7 @@ public class SovietSurvivorsViewerConfigurationStrategy extends MIRViewerConfigu
         MCRViewerConfiguration defaultConfig = super.get(request);
 
         defaultConfig.setProperty("text.showOnStart", "transcription");
+        defaultConfig.setProperty("chapter.showOnStart", false);
 
         return defaultConfig;
     }
