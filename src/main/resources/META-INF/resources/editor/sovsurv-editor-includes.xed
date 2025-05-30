@@ -203,7 +203,6 @@
           <xed:include ref="namePart.nationality" />
           <xed:include ref="person.profession" />
           <xed:include ref="namePart.sex" />
-          <xed:include uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" ref="nameIdentifier.repeated" />
         </div>
       </fieldset>
     </xed:repeat>
