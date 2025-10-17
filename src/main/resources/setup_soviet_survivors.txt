@@ -1,1 +1,2 @@
 update classification from uri resource:classifications/rfc5646.xml
+reload mappings in jpa configuration file
