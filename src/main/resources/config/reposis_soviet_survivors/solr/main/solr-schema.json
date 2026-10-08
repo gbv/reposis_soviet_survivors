@@ -1,9 +1,189 @@
 [
   {
     "add-field": {
-      "name":"survivors.mods.language",
-      "type":"string",
-      "multiValued":true
+      "name": "survivors.mods.language",
+      "type": "string",
+      "multiValued": true
     }
+  },
+  {
+    "add-dynamic-field": {
+      "name": "mods.identifier.type.*",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
   }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.author.facet",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.recipient.facet",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-copy-field": {
+    "source": "mods.author",
+    "dest": "ditav.mods.author.facet"
+  }
+},
+{
+  "add-copy-field": {
+    "source": "mods.nameByRole.personal.rcp",
+    "dest": "ditav.mods.recipient.facet"
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.origin.author.facet",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.origin.receipient.facet",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-dynamic-field": {
+    "name": "ditav.mods.title.lang.*",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_metadata_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_metadata_org_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_metadata_pers_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_file_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_file_org_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.mods.dante_file_pers_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.tei.geonames_id",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.tei.geonames_link",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.tei.place",
+    "type": "strings",
+    "multiValued": true,
+    "stored": true,
+    "indexed": true
+  }
+},
+{
+  "add-field-type": {
+    "name": "location_ditav",
+    "class": "solr.RptWithGeometrySpatialField",
+    "geo": true,
+    "spatialContextFactory": "Geo3D",
+    "distanceUnits": "kilometers",
+    "maxDistErr": "0.001",
+    "distErrPct": "0.025",
+    "planetModel": "WGS84",
+    "format": "WKT"
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.tei.coordinates",
+    "type": "location_ditav",
+    "multiValued": true
+  }
+},
+{
+  "add-field": {
+    "name": "ditav.tei.coordinates.str",
+    "type": "string",
+    "multiValued": true
+  }
+},
+{
+  "add-copy-field": {
+    "source": "ditav.tei.coordinates",
+    "dest": "ditav.tei.coordinates.str"
+  }
+}
 ]
