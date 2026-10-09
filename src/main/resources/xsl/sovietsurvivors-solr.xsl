@@ -22,4 +22,10 @@
         </field>
     </xsl:template>
 
+    <xsl:template match="mods:topic[@authority='sovsur_keywords'][@valueURI]" mode="survivors">
+        <field name="ditav.mods.dante_metadata_link">
+            <xsl:value-of select="@valueURI" />
+        </field>
+    </xsl:template>
+
 </xsl:stylesheet>
