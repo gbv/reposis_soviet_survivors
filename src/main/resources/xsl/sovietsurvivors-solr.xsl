@@ -13,6 +13,7 @@
         <xsl:apply-imports />
         <!-- fields from mycore-mods -->
         <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods/mods:language/mods:languageTerm[@authority='rfc5646' and @type='code']" mode="survivors" />
+        <xsl:apply-templates select="metadata/def.modsContainer/modsContainer/mods:mods//mods:topic[@authority='sovsur_keywords' and @valueURI]" mode="survivors" />
     </xsl:template>
 
 
